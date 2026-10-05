@@ -1173,7 +1173,7 @@
                 <!-- кнопка открытия карты -->
                 <div class="mt-9 mx-auto max-w-2xl flex flex-col items-center gap-3 reveal">
                     <a id="mapsLinkTop" target="_blank" rel="noopener" data-map-link
-                        href="https://yandex.ru/maps/-/CXejE4Is"
+                        href="https://yandex.ru/maps/-/CXerqNiG"
                         class="btn-pop btn-terra text-lg">
                         <i data-lucide="navigation" class="h-5 w-5"></i> Открыть карту
                     </a>
@@ -1187,10 +1187,26 @@
                     <!-- карта -->
                     <div class="card-brut bg-cream p-3 reveal relative min-h-[420px]">
                         <div class="absolute inset-3 rounded-[18px] overflow-hidden border-[3px] border-ink bg-sand">
-                            <iframe title="Мастерская Мердан на Яндекс.Картах"
-                                src="https://yandex.ru/map-widget/v1/?url=https%3A%2F%2Fyandex.ru%2Fmaps%2F-%2FCXejE4Is"
+                            <iframe id="mapFrame" title="Мастерская Мердан на Яндекс.Картах"
+                                src="https://yandex.ru/map-widget/v1/?ll=41.001507%2C57.748723&z=17"
                                 width="100%" height="420" allowfullscreen loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 h-full w-full"></iframe>
+
+                            <!-- метка мастерской поверх карты (остриё булавки = точка на карте) -->
+                            <div class="pointer-events-none absolute inset-0">
+                                <div
+                                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
+                                    <span
+                                        class="sticker sticker-red text-[13px] whitespace-nowrap shadow-[3px_3px_0_#1E1E1E]">Мастерская
+                                        Мердан</span>
+                                    <svg viewBox="0 0 44 62" class="mt-1 w-9 h-[54px] drop-shadow-[2px_3px_0_rgba(30,30,30,.35)]"
+                                        role="img" aria-label="Мы здесь">
+                                        <path d="M22 2C10.4 2 2 11 2 22c0 15 20 38 20 38s20-23 20-38C42 11 33.6 2 22 2z"
+                                            fill="#E7582B" stroke="#1E1E1E" stroke-width="4" stroke-linejoin="round" />
+                                        <circle cx="22" cy="22" r="8" fill="#F6C844" stroke="#1E1E1E" stroke-width="4" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1372,7 +1388,7 @@
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="mt-1 h-5 w-5 shrink-0 text-sun"></i>
                             <a id="mapsLinkFooter" target="_blank" rel="noopener" data-map-link
-                                href="https://yandex.ru/maps/-/CXejE4Is"
+                                href="https://yandex.ru/maps/-/CXerqNiG"
                                 class="hover:text-sun transition-colors">
                                 г. Кострома, пос. Октябрьский,<br>Кинешемское ш., 50А
                             </a>
@@ -1509,7 +1525,9 @@
             'use strict';
 
             var PHONE = '+7 953 664-20-21';
-            var POI_URL = 'https://yandex.ru/maps/-/CXejE4Is';
+            // координаты мастерской (из ссылки https://yandex.ru/maps/-/CXerqNiG)
+            var POI_LL = '41.001507,57.748723';
+            var POI_URL = 'https://yandex.ru/maps/-/CXerqNiG';
 
             /* ---------- иконки Lucide ---------- */
             function renderIcons() {
@@ -1721,6 +1739,12 @@
             }
 
             /* ---------- ссылки на карту ---------- */
+            var mapFrame = document.querySelector('#mapFrame');
+            if (mapFrame) {
+                // карта всегда показывает точку мастерской, а не геолокацию пользователя
+                mapFrame.setAttribute('src',
+                    'https://yandex.ru/map-widget/v1/?ll=' + encodeURIComponent(POI_LL) + '&z=17');
+            }
             Array.prototype.forEach.call(
                 document.querySelectorAll('[data-map-link]'),
                 function (link) {

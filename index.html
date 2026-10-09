@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F6C844">
+    <meta name="description"
+        content="МЕРДАН — мастерская в Костроме: дубликаты ключей на станках с ЧПУ, чип-ключи для автомобилей, ремонт обуви и сумок. Опыт мастера с 2008 года.">
+    <title>МЕРДАН — дубликаты ключей и ремонт обуви/сумок в Костроме</title>
+
+    <!-- Open Graph / превью в Telegram, Max, WhatsApp и т.д. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="МЕРДАН">
+    <meta property="og:title" content="МЕРДАН — дубликаты ключей и ремонт обуви/сумок в Костроме">
+    <meta property="og:description"
+        content="Дубликаты ключей на станках с ЧПУ, чип-ключи для автомобилей, ремонт обуви и сумок. Опыт мастера с 2008 года.">
+    <meta property="og:url" content="https://merdanas.github.io/merdan/">
+    <meta property="og:locale" content="ru_RU">
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23F6C844'/><g fill='%231E1E1E'><path d='M18 30h34a22 22 0 0 1 0 44H18a10 10 0 0 1-10-10V40a10 10 0 0 1 10-10zm18 22a9 9 0 1 0 0-18 9 9 0 0 0 0 18z'/><rect x='56' y='40' width='38' height='20' rx='4'/><rect x='82' y='60' width='12' height='10'/><rect x='70' y='60' width='10' height='8'/></g></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Russo+One&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF5EE',
+                        sand: '#F0E2CC',
+                        sun: '#F6C844',
+                        terra: '#E7582B',
+                        teal: '#259F9A',
+                        red: '#D93829',
+                        ink: '#1E1E1E',
+                        mustard: '#E9A93C',
+                        blush: '#E86A8A'
+                    },
+                    fontFamily: {
+                        display: ['"Russo One"', '"Alfa Slab One"', 'Impact', 'serif'],
+                        sticker: ['"Oswald"', '"Bebas Neue"', 'Impact', 'sans-serif'],
+                        body: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    maxWidth: {
+                        wrap: '1200px'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="lucide.min.js" defer></script>
+
+    <style>
+        :root {
+            --cream: #FAF5EE;
+            --sand: #F0E2CC;
+            --sun: #F6C844;
+            --terra: #E7582B;
+            --teal: #259F9A;
+            --red: #D93829;
+            --ink: #1E1E1E;
+            --mustard: #E9A93C;
+            --brut-shadow: 4px 4px 0 var(--ink);
+            --brut-shadow-lg: 8px 8px 0 var(--ink);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 92px;
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background-color: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--sun);
+            color: var(--ink);
+        }
+
+        /* Заголовки: Russo One (кириллица) */
+        .font-display {
+            font-family: 'Russo One', 'Alfa Slab One', Impact, serif;
+            font-weight: 400;
+        }
+
+        /* Лейблы/плашки/бегущая строка: Oswald (кириллица, узкий) */
+        .font-sticker {
+            font-family: 'Oswald', 'Bebas Neue', Impact, sans-serif;
+            font-weight: 600;
+            letter-spacing: .07em;
+        }
+
+        /* Латинский декоративный акцент: Alfa Slab One */
+        .font-alfa {
+            font-family: 'Alfa Slab One', Impact, serif;
+        }
+
+        /* ---------- textures & decor ---------- */
+        .halftone {
+            background-image: radial-gradient(var(--ink) 1.6px, transparent 1.7px);
+            background-size: 13px 13px;
+            opacity: .16;
+        }
+
+        .halftone-light {
+            background-image: radial-gradient(#fff 1.8px, transparent 1.9px);
+            background-size: 14px 14px;
+            opacity: .22;
+        }
+
+        .stripes-terra {
+            background-image: repeating-linear-gradient(-45deg,
+                    var(--terra) 0 14px, transparent 14px 28px);
+        }
+
+        .stripes-ink {
+            background-image: repeating-linear-gradient(-45deg,
+                    rgba(255, 255, 255, .10) 0 12px, transparent 12px 24px);
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 2.5px var(--ink);
+            paint-order: stroke fill;
+        }
+
+        @media (max-width: 640px) {
+            .text-outline {
+                -webkit-text-stroke: 2px var(--ink);
+            }
+        }
+
+        .wave-bottom {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: -1px;
+        }
+
+        .wave-top {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: -1px;
+            transform: rotate(180deg);
+        }
+
+        /* ---------- brutalist / retro-pop buttons ---------- */
+        .btn-pop {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            border: 3px solid var(--ink);
+            border-radius: 999px;
+            background: var(--cream);
+            color: var(--ink);
+            padding: .8rem 1.6rem;
+            font-family: 'Oswald', Impact, sans-serif; font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            box-shadow: var(--brut-shadow);
+            transition: transform .16s cubic-bezier(.2, .8, .3, 1), box-shadow .16s, background-color .2s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-pop:hover {
+            transform: translate(-2px, -2px) rotate(-1deg);
+            box-shadow: 7px 7px 0 var(--ink);
+        }
+
+        .btn-pop:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 var(--ink);
+        }
+
+        .btn-sun {
+            background: var(--sun);
+        }
+
+        .btn-terra {
+            background: var(--terra);
+            color: #fff;
+        }
+
+        .btn-teal {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        .btn-red {
+            background: var(--red);
+            color: #fff;
+        }
+
+        .btn-ink {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        .btn-outline {
+            background: transparent;
+        }
+
+        .btn-sm {
+            padding: .55rem 1.05rem;
+            font-size: .98rem;
+            border-width: 2.5px;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        .btn-sm:hover {
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        /* ---------- stickers ---------- */
+        .sticker {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: #fff;
+            border: 3px solid var(--ink);
+            border-radius: 999px;
+            padding: .35rem .9rem;
+            font-family: 'Oswald', Impact, sans-serif; font-weight: 600;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            font-size: .95rem;
+            box-shadow: 3px 3px 0 var(--ink);
+            transform: rotate(var(--rot, -3deg));
+            transition: transform .25s cubic-bezier(.2, .8, .3, 1), box-shadow .25s;
+            white-space: nowrap;
+        }
+
+        .sticker:hover {
+            transform: rotate(0deg) scale(1.06);
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        .sticker-sun {
+            background: var(--sun);
+        }
+
+        .sticker-teal {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        .sticker-red {
+            background: var(--red);
+            color: #fff;
+        }
+
+        .sticker-ink {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        .sticker-terra {
+            background: var(--terra);
+            color: #fff;
+        }
+
+        /* ---------- marquee ---------- */
+        .marquee {
+            overflow: hidden;
+            -webkit-mask-image: none;
+        }
+
+        .marquee__track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 32s linear infinite;
+        }
+
+        .marquee--fast .marquee__track {
+            animation-duration: 22s;
+        }
+
+        .marquee--rev .marquee__track {
+            animation-direction: reverse;
+        }
+
+        .marquee:hover .marquee__track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.4rem;
+            padding: 0 1.1rem;
+            white-space: nowrap;
+        }
+
+        .ticker-star {
+            color: var(--sun);
+            font-size: 1.05rem;
+        }
+
+        /* ---------- cards ---------- */
+        .card-brut {
+            position: relative;
+            border: 3px solid var(--ink);
+            border-radius: 26px;
+            box-shadow: var(--brut-shadow-lg);
+            transition: transform .28s cubic-bezier(.2, .8, .3, 1), box-shadow .28s;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .card-brut:hover {
+            transform: translate(-4px, -6px) rotate(-.6deg);
+            box-shadow: 12px 14px 0 var(--ink);
+        }
+
+        .card-art {
+            transition: transform .35s cubic-bezier(.2, .8, .3, 1);
+        }
+
+        .card-brut:hover .card-art {
+            transform: translateY(-6px) rotate(-4deg) scale(1.04);
+        }
+
+        .tilt-l {
+            transform: rotate(-5deg);
+            transition: transform .35s cubic-bezier(.2, .8, .3, 1);
+        }
+
+        .card-brut:hover .tilt-l {
+            transform: rotate(4deg) translateY(-4px);
+        }
+
+        .badge-tilt {
+            transform: rotate(4deg);
+        }
+
+        .ribbon {
+            position: absolute;
+            background: var(--red);
+            color: #fff;
+            font-family: 'Oswald', sans-serif; font-weight: 600;
+            letter-spacing: .08em;
+            border: 3px solid var(--ink);
+        }
+
+        /* ---------- floating hero decor ---------- */
+        .float {
+            animation: floaty 6s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .float-slow {
+            animation-duration: 9s;
+        }
+
+        @keyframes floaty {
+            0%, 100% {
+                transform: translateY(0) rotate(var(--r, 0deg));
+            }
+
+            50% {
+                transform: translateY(-16px) rotate(calc(var(--r, 0deg) + 5deg));
+            }
+        }
+
+        .spin-slow {
+            animation: spinny 18s linear infinite;
+        }
+
+        @keyframes spinny {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pulse-ring {
+            animation: pulsering 3.2s ease-out infinite;
+        }
+
+        @keyframes pulsering {
+            0% {
+                transform: scale(.9);
+                opacity: .55;
+            }
+
+            100% {
+                transform: scale(1.25);
+                opacity: 0;
+            }
+        }
+
+        /* ---------- mobile nav ---------- */
+        #mobileNav {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .45s cubic-bezier(.2, .8, .3, 1), opacity .3s;
+            opacity: 0;
+        }
+
+        #mobileNav.is-open {
+            max-height: 620px;
+            opacity: 1;
+        }
+
+        #burgerBar {
+            transition: transform .35s cubic-bezier(.2, .8, .3, 1), opacity .2s;
+        }
+
+        #burgerBar.is-open {
+            transform: rotate(135deg);
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 700;
+            letter-spacing: .01em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 4px;
+            width: 100%;
+            border-radius: 4px;
+            background: var(--sun);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .28s cubic-bezier(.2, .8, .3, 1);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.is-active::after {
+            transform: scaleX(1);
+        }
+
+        /* ---------- scroll reveal ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s cubic-bezier(.2, .8, .3, 1), transform .7s cubic-bezier(.2, .8, .3, 1);
+        }
+
+        .reveal.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ---------- FAQ accordion ---------- */
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.2, .8, .3, 1);
+        }
+
+        .faq-item.is-open .faq-body {
+            max-height: 340px;
+        }
+
+        .faq-item.is-open .faq-chev {
+            transform: rotate(180deg);
+        }
+
+        .faq-chev {
+            transition: transform .3s;
+        }
+
+        /* ---------- cart / request badge ---------- */
+        .count-bump {
+            animation: bump .4s cubic-bezier(.2, .9, .3, 1.4);
+        }
+
+        @keyframes bump {
+            0% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.5) rotate(-8deg);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* ---------- modal ---------- */
+        #orderModal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .28s;
+        }
+
+        #orderModal.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #orderModal .modal-card {
+            transform: translateY(26px) scale(.94) rotate(-1.5deg);
+            transition: transform .35s cubic-bezier(.2, .9, .3, 1.3);
+        }
+
+        #orderModal.is-open .modal-card {
+            transform: none;
+        }
+
+        .field {
+            width: 100%;
+            border: 3px solid var(--ink);
+            border-radius: 16px;
+            background: #fff;
+            padding: .8rem 1rem;
+            font-weight: 600;
+            outline: none;
+            transition: box-shadow .2s, transform .2s;
+        }
+
+        .field:focus {
+            box-shadow: 4px 4px 0 var(--ink);
+            transform: translate(-1px, -1px);
+        }
+
+        /* ---------- toast ---------- */
+        #toast {
+            transform: translate(-50%, 140%);
+            transition: transform .4s cubic-bezier(.2, .9, .3, 1.3);
+        }
+
+        #toast.is-show {
+            transform: translate(-50%, 0);
+        }
+
+        /* ---------- scrollbar (reviews row) ---------- */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body antialiased">
+
+    <!-- ============ 1. PROMO TICKER ============ -->
+    <div class="relative z-50 bg-ink text-cream border-b-4 border-ink select-none">
+        <div class="marquee py-2">
+            <div class="marquee__track font-sticker text-lg sm:text-xl uppercase">
+                <!-- set A -->
+                <div class="ticker-item">
+                    <span>Дубликаты ключей</span><span class="ticker-star">✱</span>
+                    <span>Станки с ЧПУ</span><span class="ticker-star">✱</span>
+                    <span>Ключи для автомобилей</span><span class="ticker-star">✱</span>
+                    <span>Ремонт обуви</span><span class="ticker-star">✱</span>
+                    <span>Ремонт сумок</span><span class="ticker-star">✱</span>
+                    <span>Опыт с 2008 года</span><span class="ticker-star">✱</span>
+                    <span>Гарантия на работу</span><span class="ticker-star">✱</span>
+                </div>
+                <!-- set B (duplicate for seamless loop) -->
+                <div class="ticker-item" aria-hidden="true">
+                    <span>Дубликаты ключей</span><span class="ticker-star">✱</span>
+                    <span>Станки с ЧПУ</span><span class="ticker-star">✱</span>
+                    <span>Ключи для автомобилей</span><span class="ticker-star">✱</span>
+                    <span>Ремонт обуви</span><span class="ticker-star">✱</span>
+                    <span>Ремонт сумок</span><span class="ticker-star">✱</span>
+                    <span>Опыт с 2008 года</span><span class="ticker-star">✱</span>
+                    <span>Гарантия на работу</span><span class="ticker-star">✱</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 2. STICKY HEADER ============ -->
+    <header id="siteHeader"
+        class="sticky top-0 z-40 bg-cream/95 backdrop-blur-sm border-b-4 border-ink transition-shadow">
+        <div class="mx-auto max-w-wrap px-4 sm:px-6">
+            <div class="flex items-center justify-between gap-4 py-3">
+
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-3 group shrink-0">
+                    <span
+                        class="grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-2xl bg-sun border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] transition-transform duration-300 group-hover:-rotate-6">
+                        <svg viewBox="0 0 100 100" class="h-7 w-7 sm:h-8 sm:w-8" aria-hidden="true">
+                            <g fill="#1E1E1E">
+                                <path
+                                    d="M20 30h34a22 22 0 0 1 0 44H20A10 10 0 0 1 10 64V40A10 10 0 0 1 20 30zm18 22a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
+                                <rect x="56" y="40" width="36" height="20" rx="4" />
+                                <rect x="80" y="60" width="12" height="10" />
+                                <rect x="68" y="60" width="10" height="8" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="leading-none">
+                        <span class="block font-display text-2xl sm:text-[28px] tracking-tight">МЕРДАН</span>
+                        <span class="block font-sticker text-[13px] sm:text-sm uppercase tracking-[.12em] text-ink/70">
+                            Ключи · Обувь · Сумки
+                        </span>
+                    </span>
+                </a>
+
+                <!-- Desktop nav -->
+                <nav class="hidden lg:flex items-center gap-7 text-[15px]" aria-label="Основная навигация">
+                    <a href="#services" class="nav-link hover:text-terra transition-colors">Услуги</a>
+                    <a href="#about" class="nav-link hover:text-terra transition-colors">О мастерской</a>
+                    <a href="#where" class="nav-link hover:text-terra transition-colors">Найти нас</a>
+                    <a href="#faq" class="nav-link hover:text-terra transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Right cluster -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:+79536642021"
+                        class="hidden xl:flex flex-col items-end leading-tight font-sticker text-xl tracking-wide hover:text-terra transition-colors">
+                        <span class="text-[11px] uppercase tracking-[.14em] text-ink/60 font-body font-bold">Пн–Пт 8:00–18:00</span>
+                        <span>+7 953 664-20-21</span>
+                    </a>
+
+                    <button id="burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+                        class="lg:hidden grid h-11 w-11 place-items-center rounded-2xl bg-cream border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E]">
+                        <span id="burgerBar" class="relative block h-[3px] w-6 rounded bg-ink before:absolute before:-top-2.5 before:left-0 before:h-[3px] before:w-6 before:rounded before:bg-ink after:absolute after:top-2.5 after:left-0 after:h-[3px] after:w-6 after:rounded after:bg-ink">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="lg:hidden bg-sun border-t-4 border-ink">
+            <nav class="px-4 py-3 flex flex-col gap-2" aria-label="Мобильная навигация">
+                <a href="#services" class="mobile-link font-sticker text-2xl uppercase">01 / Услуги</a>
+                <a href="#about" class="mobile-link font-sticker text-2xl uppercase">02 / О мастерской</a>
+                <a href="#where" class="mobile-link font-sticker text-2xl uppercase">03 / Найти нас</a>
+                <a href="#faq" class="mobile-link font-sticker text-2xl uppercase">04 / FAQ</a>
+                <div class="mt-2 flex flex-wrap items-center gap-3 border-t-[3px] border-ink pt-3">
+                    <a href="tel:+79536642021" class="btn-pop btn-ink btn-sm"><i data-lucide="phone"
+                            class="h-4 w-4"></i>+7 953 664-20-21</a>
+                    <span class="font-sticker text-lg uppercase">Работаем с 2008 г.</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ 3. HERO ============ -->
+        <section id="hero" class="relative overflow-hidden">
+            <!-- decor background -->
+            <div class="absolute inset-0 halftone pointer-events-none"></div>
+            <div
+                class="absolute -right-24 -top-28 h-72 w-72 rounded-full bg-sun/70 blur-[2px] pointer-events-none hidden md:block">
+            </div>
+            <div
+                class="absolute -left-20 bottom-8 h-56 w-56 rounded-full border-[10px] border-teal/25 pointer-events-none hidden lg:block">
+            </div>
+
+            <div class="relative mx-auto max-w-wrap px-4 sm:px-6 pt-10 pb-16 sm:pt-16 lg:pb-24">
+                <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+
+                    <!-- text -->
+                    <div class="order-2 lg:order-1 text-center lg:text-left">
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-6">
+                            <span class="sticker sticker-sun" style="--rot:-4deg">
+                                <i data-lucide="award" class="h-4 w-4"></i> Опыт с 2008 года
+                            </span>
+                            <span class="sticker sticker-teal" style="--rot:3deg">
+                                <i data-lucide="zap" class="h-4 w-4"></i> Ключ за 5 минут
+                            </span>
+                        </div>
+
+                        <h1 class="font-display leading-[.95] tracking-tight">
+                            <span class="block text-[13vw] sm:text-[10vw] lg:text-[74px]">Ключи,</span>
+                            <span class="block text-[13vw] sm:text-[10vw] lg:text-[74px] text-terra">которые</span>
+                            <span class="block text-[13vw] sm:text-[10vw] lg:text-[74px]">открывают</span>
+                            <span class="block text-[13vw] sm:text-[10vw] lg:text-[74px] text-outline">двери</span>
+                        </h1>
+
+                        <p class="mt-6 text-base sm:text-lg font-semibold text-ink/80 max-w-xl mx-auto lg:mx-0">
+                            Мастерская в пос. Октябрьский: дубликаты ключей на станках с ЧПУ, ключи для
+                            автомобилей, ремонт обуви и сумок. Точно, быстро и с гарантией.
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <a href="#services" class="btn-pop btn-outline text-lg">
+                                Смотреть услуги
+                                <i data-lucide="arrow-down-right" class="h-5 w-5"></i>
+                            </a>
+                        </div>
+
+                        <div class="mt-9 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0">
+                            <div class="rounded-2xl bg-white border-[3px] border-ink shadow-[4px_4px_0_#1E1E1E] px-3 py-3">
+                                <p class="font-display text-2xl sm:text-3xl">18+</p>
+                                <p class="font-sticker text-sm sm:text-base uppercase text-ink/70">лет в профессии</p>
+                            </div>
+                            <div class="rounded-2xl bg-teal text-white border-[3px] border-ink shadow-[4px_4px_0_#1E1E1E] px-3 py-3">
+                                <p class="font-display text-2xl sm:text-3xl">5 мин</p>
+                                <p class="font-sticker text-sm sm:text-base uppercase text-white/85">быстрый ключ</p>
+                            </div>
+                            <div class="rounded-2xl bg-terra text-white border-[3px] border-ink shadow-[4px_4px_0_#1E1E1E] px-3 py-3">
+                                <p class="font-display text-2xl sm:text-3xl">7 дней</p>
+                                <p class="font-sticker text-sm sm:text-base uppercase text-white/85">работаем без выходных</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- illustration cluster -->
+                    <div class="order-1 lg:order-2 relative">
+                        <div class="relative mx-auto w-full max-w-[420px] aspect-square">
+
+                            <!-- sun circle -->
+                            <div class="absolute inset-4 rounded-full bg-sun border-[4px] border-ink shadow-[10px_10px_0_#1E1E1E]"></div>
+                            <div class="absolute inset-4 rounded-full halftone pointer-events-none"></div>
+                            <div class="absolute inset-0 rounded-full border-[4px] border-ink pulse-ring pointer-events-none"></div>
+
+                            <!-- big key -->
+                            <div class="absolute inset-0 grid place-items-center">
+                                <svg viewBox="0 0 300 300" class="w-[86%] drop-shadow-[6px_8px_0_rgba(30,30,30,.28)] float"
+                                    style="--r:-6deg" aria-label="Дубликат ключа" role="img">
+                                    <g transform="translate(12 92) rotate(-12 140 60)">
+                                        <!-- bow -->
+                                        <path
+                                            d="M30 16h84a52 52 0 0 1 0 104H30A22 22 0 0 1 8 98V38A22 22 0 0 1 30 16zm42 52a20 20 0 1 0 0-40 20 20 0 0 0 0 40z"
+                                            fill="#fff" stroke="#1E1E1E" stroke-width="8" fill-rule="evenodd" />
+                                        <!-- collar -->
+                                        <rect x="130" y="34" width="20" height="68" rx="5" fill="#F6C844" stroke="#1E1E1E"
+                                            stroke-width="8" />
+                                        <!-- blade -->
+                                        <path d="M150 40h136v30h-18v16h-16V70h-16v16h-16V62h-74z" fill="#fff"
+                                            stroke="#1E1E1E" stroke-width="8" stroke-linejoin="round" />
+                                        <!-- shine -->
+                                        <path d="M166 50h84" stroke="#F6C844" stroke-width="8" stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- floating stickers around the key -->
+                            <div class="absolute top-2 left-0 float" style="--r:-10deg; animation-delay:.2s">
+                                <span class="sticker sticker-red text-sm"><i data-lucide="clock-3"
+                                        class="h-4 w-4"></i>5 минут</span>
+                            </div>
+                            <div class="absolute top-16 right-0 float float-slow" style="--r:8deg">
+                                <span class="sticker sticker-sun text-sm">ЧПУ</span>
+                            </div>
+                            <div class="absolute bottom-24 left-1 float float-slow" style="--r:7deg">
+                                <span class="sticker sticker-teal text-sm"><i data-lucide="shield-check"
+                                        class="h-4 w-4"></i>Гарантия</span>
+                            </div>
+                            <div class="absolute bottom-6 right-6 float" style="--r:-8deg">
+                                <span class="sticker sticker-ink text-[15px]">Работаем с 2008 г.</span>
+                            </div>
+
+                            <!-- vector doodles -->
+                            <svg viewBox="0 0 120 120" class="absolute -bottom-2 -left-2 w-16 h-16 spin-slow text-terra pointer-events-none"
+                                aria-hidden="true">
+                                <path d="M60 8 70 44l36-8-24 28 26 26-36-8-10 36-10-36-36 8 26-26L18 36l36 8z"
+                                    fill="currentColor" stroke="#1E1E1E" stroke-width="5" stroke-linejoin="round" />
+                            </svg>
+                            <svg viewBox="0 0 80 80" class="absolute top-24 left-6 w-12 h-12 text-red float pointer-events-none"
+                                style="--r:-12deg" aria-hidden="true">
+                                <path
+                                    d="M40 6c14 16 22 27 22 38a22 22 0 0 1-44 0c0-11 8-22 22-38z"
+                                    fill="currentColor" stroke="#1E1E1E" stroke-width="5" />
+                                <path d="M40 30v34" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round" />
+                                <path d="M32 52c0 8 4 12 8 14" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                            </svg>
+                            <svg viewBox="0 0 100 100" class="absolute bottom-28 right-0 w-14 h-14 text-teal float float-slow pointer-events-none"
+                                style="--r:10deg" aria-hidden="true">
+                                <g stroke="#1E1E1E" stroke-width="6" stroke-linejoin="round" fill="currentColor">
+                                    <path d="M50 12c14 0 22 10 22 24v30H28V36c0-14 8-24 22-24z" />
+                                    <path d="M28 52h-10a8 8 0 0 0-8 8v6a8 8 0 0 0 8 8h10z" />
+                                    <path d="M72 40h10a8 8 0 0 1 8 8v6a8 8 0 0 1-8 8h-10z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- wave divider -->
+            <svg class="wave-bottom" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 66c120-52 260 34 400 42s210-58 330-52 190 52 320 44 260-64 390-48v58H0z"
+                    fill="#F6C844" />
+                <path d="M0 82c140-40 250 22 400 28s230-48 350-40 180 40 310 30 250-42 380-30v40H0z"
+                    fill="#E7582B" />
+            </svg>
+        </section>
+        <!-- ============ 4. УСЛУГИ / КАТАЛОГ ============ -->
+        <section id="services" class="relative bg-sun py-16 sm:py-20">
+            <div class="absolute inset-0 halftone pointer-events-none"></div>
+
+            <div class="relative mx-auto max-w-wrap px-4 sm:px-6">
+                <div class="text-center max-w-3xl mx-auto reveal">
+                    <span class="sticker sticker-ink" style="--rot:-3deg">
+                        <i data-lucide="wrench" class="h-4 w-4"></i> Каталог услуг
+                    </span>
+                    <h2 class="mt-5 font-display text-[10vw] sm:text-6xl leading-[.95]">
+                        Что мы <span class="text-terra">делаем</span>
+                    </h2>
+                    <p class="mt-4 text-base sm:text-lg font-semibold text-ink/75">
+                        Ключи изготавливаем на станках с числовым программным управлением, вещи —
+                        восстанавливаем вручную. Каждый заказ — с гарантией и понятной ценой.
+                    </p>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center gap-6">
+
+                    <!-- Карточка 1: квартирные ключи -->
+                    <article class="card-brut bg-cream flex flex-col reveal w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                        <div class="relative h-44 bg-mustard grid place-items-center overflow-hidden">
+                            <div class="absolute inset-0 halftone-light"></div>
+                            <svg viewBox="0 0 200 120" class="card-art relative w-[82%]" aria-hidden="true">
+                                <g stroke="#1E1E1E" stroke-width="7" stroke-linejoin="round">
+                                    <path d="M22 20h52a34 34 0 0 1 0 68H22A14 14 0 0 1 8 74V34A14 14 0 0 1 22 20z"
+                                        fill="#fff" fill-rule="evenodd" />
+                                    <path d="M38 54a12 12 0 1 0 0-24 12 12 0 0 0 0 24z" fill="#F6C844" />
+                                    <path d="M78 40h16v28H78z" fill="#F6C844" />
+                                    <path d="M94 44h92v22h-14v10h-12V58h-14v10h-14V56H94z" fill="#fff" />
+                                </g>
+                            </svg>
+                            <span class="absolute top-3 right-3 sticker sticker-red badge-tilt text-[13px]">От 5 минут</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-display text-2xl leading-tight">Квартирные ключи</h3>
+                            <p class="mt-2 text-sm font-semibold text-ink/70">
+                                Дубликаты для цилиндровых, английских, финских, ригельных, гаражных замков.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm font-semibold">
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Большой выбор заготовок в наличии</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Изготовление домофонных ключей</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Подбор под ваш замок</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Плавный ход в замочной скважине</li>
+                            </ul>
+                            <div class="mt-auto pt-5 flex items-center justify-between gap-3">
+                                <span class="font-display text-xl">от 200 ₽</span>
+                                <button type="button" data-open-order data-service="Квартирные ключи"
+                                    class="btn-pop btn-teal btn-sm">+ Заказать</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 2: автомобильные ключи -->
+                    <article class="card-brut bg-cream flex flex-col reveal w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                        <div class="relative h-44 bg-teal grid place-items-center overflow-hidden">
+                            <div class="absolute inset-0 halftone-light"></div>
+                            <svg viewBox="0 0 200 120" class="card-art relative w-[74%]" aria-hidden="true">
+                                <g stroke="#1E1E1E" stroke-width="7" stroke-linejoin="round">
+                                    <rect x="58" y="8" width="84" height="86" rx="20" fill="#fff" />
+                                    <rect x="76" y="30" width="48" height="30" rx="6" fill="#1E1E1E" />
+                                    <rect x="84" y="38" width="32" height="14" rx="3" fill="#F6C844" stroke="none" />
+                                    <path d="M86 76h28l-6 14H80z" fill="#F6C844" />
+                                    <path d="M92 98h16l6 14H98z" fill="#fff" />
+                                </g>
+                            </svg>
+                            <span class="absolute top-3 right-3 sticker sticker-sun badge-tilt text-[13px]">чип / BIL</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-display text-2xl leading-tight">Ключи для авто</h3>
+                            <p class="mt-2 text-sm font-semibold text-ink/70">
+                                Дубликаты транспондеров, корпусов и кнопок для популярных марок.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm font-semibold">
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Подбор по модели и году</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Корпуса, ключи-пустышки</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Запись транспондера</li>
+                            </ul>
+                            <div class="mt-auto pt-5 flex items-center justify-between gap-3">
+                                <span class="font-display text-xl">от 1 200 ₽</span>
+                                <button type="button" data-open-order data-service="Ключи для автомобиля"
+                                    class="btn-pop btn-teal btn-sm">+ Заказать</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 3: ремонт обуви -->
+                    <article class="card-brut bg-cream flex flex-col reveal w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                        <div class="relative h-44 bg-red grid place-items-center overflow-hidden">
+                            <div class="absolute inset-0 halftone-light"></div>
+                            <svg viewBox="0 0 200 120" class="card-art relative w-[86%]" aria-hidden="true">
+                                    <g stroke="#1E1E1E" stroke-width="7" stroke-linejoin="round">
+                                        <path d="M18 76c16-6 26-14 34-26 6-8 14-8 20 0 8 12 20 20 34 22l58 6c16 2 26 10 26 22v6H18z"
+                                            fill="#fff" />
+                                        <path d="M18 100h172v12H18z" fill="#F6C844" />
+                                        <path d="M96 58c14 2 26 6 38 12" fill="none" stroke="#D93829" />
+                                    </g>
+                                </svg>
+                            <span class="absolute top-3 right-3 sticker sticker-sun badge-tilt text-[13px]">подошва</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-display text-2xl leading-tight">Ремонт обуви</h3>
+                            <p class="mt-2 text-sm font-semibold text-ink/70">
+                                Клеим, подшиваем, ставим новую подошву и набойки, восстанавливаем протектор.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm font-semibold">
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Профилактика ниток и швов</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Замена подошвы и каблука</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Замена набоек</li>
+                            </ul>
+                            <div class="mt-auto pt-5 flex items-center justify-between gap-3">
+                                <span class="font-display text-xl">от 600 ₽</span>
+                                <button type="button" data-open-order data-service="Ремонт обуви"
+                                    class="btn-pop btn-teal btn-sm">+ Заказать</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 4: ремонт сумок -->
+                    <article class="card-brut bg-cream flex flex-col reveal w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                        <div class="relative h-44 bg-terra grid place-items-center overflow-hidden">
+                            <div class="absolute inset-0 halftone-light"></div>
+                            <svg viewBox="0 0 200 120" class="card-art relative w-[76%]" aria-hidden="true">
+                                <g stroke="#1E1E1E" stroke-width="7" stroke-linejoin="round">
+                                    <path d="M52 44c0-16 12-26 28-26s28 10 28 26" fill="none" />
+                                    <path d="M28 44h104a8 8 0 0 1 8 8v48a10 10 0 0 1-10 10H30a10 10 0 0 1-10-10V52a8 8 0 0 1 8-8z"
+                                        fill="#fff" />
+                                    <rect x="86" y="60" width="28" height="20" rx="5" fill="#F6C844" />
+                                </g>
+                            </svg>
+                            <span class="absolute top-3 right-3 sticker sticker-ink badge-tilt text-[13px]">швы</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-display text-2xl leading-tight">Ремонт сумок</h3>
+                            <p class="mt-2 text-sm font-semibold text-ink/70">
+                                Укрепляем и штопаем сумки: расшиваем швы, меняем фурнитуру и замки.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm font-semibold">
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Расшивка по шву</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Замена фурнитуры</li>
+                            </ul>
+                            <div class="mt-auto pt-5 flex items-center justify-between gap-3">
+                                <span class="font-display text-xl">от 1 500 ₽</span>
+                                <button type="button" data-open-order data-service="Ремонт сумок"
+                                    class="btn-pop btn-teal btn-sm">+ Заказать</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 5: замена молний -->
+                    <article class="card-brut bg-cream flex flex-col reveal w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                        <div class="relative h-44 bg-sun grid place-items-center overflow-hidden">
+                            <div class="absolute inset-0 halftone"></div>
+                            <svg viewBox="0 0 200 120" class="card-art relative w-[80%]" aria-hidden="true">
+                                <g stroke="#1E1E1E" stroke-width="7" stroke-linejoin="round">
+                                    <rect x="30" y="26" width="140" height="22" rx="6" fill="#fff" />
+                                    <rect x="30" y="72" width="140" height="22" rx="6" fill="#fff" />
+                                    <g fill="#fff">
+                                        <rect x="58" y="18" width="12" height="38" />
+                                        <rect x="76" y="18" width="12" height="38" />
+                                        <rect x="94" y="18" width="12" height="38" />
+                                        <rect x="112" y="18" width="12" height="38" />
+                                        <rect x="130" y="18" width="12" height="38" />
+                                    </g>
+                                    <path d="M146 48h18v26h-18a8 8 0 0 1 0-26z" fill="#D93829" />
+                                    <path d="M152 58h8v8h-8z" fill="#F6C844" stroke="none" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-display text-2xl leading-tight">Молнии и фурнитура</h3>
+                            <p class="mt-2 text-sm font-semibold text-ink/70">
+                                Меняем сломанные «собачки», ставим новые бегунки, кнопки, застёжки и люверсы.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm font-semibold">
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Бегунок за 10 минут</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Подбор под металл и цвет</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check"
+                                        class="mt-0.5 h-4 w-4 shrink-0 text-teal"></i>Вшивание молнии наглухо</li>
+                            </ul>
+                            <div class="mt-auto pt-5 flex items-center justify-between gap-3">
+                                <span class="font-display text-xl">от 400 ₽</span>
+                                <button type="button" data-open-order data-service="Молнии и фурнитура"
+                                    class="btn-pop btn-teal btn-sm">+ Заказать</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="mt-10 flex flex-col items-center gap-4 reveal">
+                    <a href="#where" class="btn-pop btn-ink text-lg">
+                        <i data-lucide="map-pin" class="h-5 w-5"></i>
+                        Как нас найти — Кострома, Октябрьский
+                    </a>
+                    <p class="font-sticker text-lg uppercase text-ink/60">
+                        Работаем ежедневно · опыт мастера с 2008 года
+                    </p>
+                </div>
+
+                <!-- фотографии мастерской -->
+                <div class="mt-12 grid gap-5 grid-cols-2 lg:grid-cols-4 reveal">
+                    <figure class="card-brut bg-cream !rounded-3xl">
+                        <div class="aspect-[4/3] overflow-hidden border-b-[3px] border-ink bg-sand">
+                            <img src="фото/0.png" alt="Работа мастерской: ремонт сумок" loading="lazy"
+                                class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </figure>
+                    <figure class="card-brut bg-cream !rounded-3xl">
+                        <div class="aspect-[4/3] overflow-hidden border-b-[3px] border-ink bg-sand">
+                            <img src="фото/1.jpg" alt="Работа мастерской: ремонт обуви" loading="lazy"
+                                class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </figure>
+                    <figure class="card-brut bg-cream !rounded-3xl">
+                        <div class="aspect-[4/3] overflow-hidden border-b-[3px] border-ink bg-sand">
+                            <img src="фото/2.jpg" alt="Работа мастерской: ремонт вещей" loading="lazy"
+                                class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </figure>
+                    <figure class="card-brut bg-cream !rounded-3xl">
+                        <div class="aspect-[4/3] overflow-hidden border-b-[3px] border-ink bg-sand">
+                            <img src="фото/3.jpg" alt="Результат работы мастерской" loading="lazy"
+                                class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- wave -->
+            <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 40c130 40 250-24 380-20s220 44 350 42 200-40 330-36 250 34 380 24v40H0z"
+                    fill="#FAF5EE" />
+            </svg>
+        </section>
+
+        <!-- ============ 5. О МАСТЕРСКОЙ / ПРЕИМУЩЕСТВА ============ -->
+        <section id="about" class="relative bg-cream py-16 sm:py-20">
+            <div class="mx-auto max-w-wrap px-4 sm:px-6">
+                <div class="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
+
+                    <div class="reveal">
+                        <span class="sticker sticker-terra" style="--rot:3deg">
+                            <i data-lucide="sparkles" class="h-4 w-4"></i> Наш подход
+                        </span>
+                        <h2 class="mt-5 font-display text-[10vw] sm:text-5xl lg:text-6xl leading-[.95]">
+                            Как мы это <span class="text-teal">делаем</span>
+                        </h2>
+                        <p class="mt-5 text-base sm:text-lg font-semibold text-ink/75 max-w-lg">
+                            С 2008 года мастер работает руками и станками с ЧПУ: сначала точность,
+                            потом красота. Мы не «чиним на глаз» — мы возвращаем вещам их состояние.
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-start gap-4">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sun border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] font-display text-lg">01</span>
+                                <p class="font-semibold text-ink/80"><strong class="text-ink">Опыт с 2008 года.</strong>
+                                    Более 15 лет мастер делает ключи и чинит обувь и сумки руками.</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-teal text-white border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] font-display text-lg">02</span>
+                                <p class="font-semibold text-ink/80"><strong class="text-ink">Станки с ЧПУ.</strong>
+                                    Профиль ключа вырезается с заводской точностью — дубликат входит в замок как родной.</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-red text-white border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] font-display text-lg">03</span>
+                                <p class="font-semibold text-ink/80"><strong class="text-ink">Материалы в наличии.</strong>
+                                    Собственный ключевой материал, подошвы, молнии и фурнитура — без ожидания заказа.</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-ink text-cream border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] font-display text-lg">04</span>
+                                <p class="font-semibold text-ink/80"><strong class="text-ink">Честная цена.</strong>
+                                    Называем стоимость сразу и не берём доплат за «сложный случай».</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-mustard border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] font-display text-lg">05</span>
+                                <p class="font-semibold text-ink/80"><strong class="text-ink">Гарантия на работу.</strong>
+                                    Если что-то пошло не так — переделаем бесплатно. Это правило мастерской.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- манифест -->
+                    <div class="reveal relative">
+                        <div class="relative rounded-[30px] border-[3px] border-ink bg-ink text-cream p-7 sm:p-10 shadow-[10px_10px_0_#E7582B] overflow-hidden">
+                            <div class="absolute inset-0 stripes-ink pointer-events-none"></div>
+                            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full border-[10px] border-sun/25 pointer-events-none spin-slow"></div>
+
+                            <i data-lucide="quote" class="h-10 w-10 text-sun"></i>
+                            <p class="mt-4 font-display text-[26px] sm:text-4xl leading-[1.15]">
+                                Каждый ключ — это точность.<br>
+                                Каждая пара — это характер.<br>
+                                <span class="text-sun">Вещь, сделанная на совесть, живёт вдвое дольше.</span>
+                            </p>
+                            <div class="mt-7 flex flex-wrap gap-2.5">
+                                <span class="sticker sticker-sun" style="--rot:-3deg">Ремонт за 1 день</span>
+                                <span class="sticker sticker-terra" style="--rot:2deg">Гарантия</span>
+                                <span class="sticker sticker-teal text-base" style="--rot:-2deg">Работаем с 2008 г.</span>
+                            </div>
+                            <p class="mt-8 border-t-[3px] border-cream/20 pt-5 font-sticker text-lg uppercase tracking-wide text-cream/70">
+                                Мастерская «Мердан» · пос. Октябрьский, Кинешемское ш., 50А
+                            </p>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap gap-2.5">
+                            <span class="sticker sticker-sun" style="--rot:2deg"><i data-lucide="car"
+                                    class="h-4 w-4"></i> Автоключи</span>
+                            <span class="sticker sticker-red" style="--rot:-2deg"><i data-lucide="footprints"
+                                    class="h-4 w-4"></i> Обувь</span>
+                            <span class="sticker sticker-teal" style="--rot:3deg"><i data-lucide="briefcase"
+                                    class="h-4 w-4"></i> Сумки</span>
+                            <span class="sticker sticker-ink" style="--rot:-1deg"><i data-lucide="key"
+                                    class="h-4 w-4"></i> Ключи</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============ 6. НАЙТИ НАС / КАРТА ============ -->
+        <section id="where" class="relative bg-sand py-16 sm:py-20">
+            <div class="mx-auto max-w-wrap px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto reveal">
+                    <span class="sticker sticker-teal" style="--rot:-2deg">
+                        <i data-lucide="map" class="h-4 w-4"></i> Где мы находимся
+                    </span>
+                    <h2 class="mt-5 font-display text-[10vw] sm:text-5xl lg:text-6xl leading-[.95]">
+                        Найти нас <span class="text-terra">легко</span>
+                    </h2>
+                    <p class="mt-4 font-semibold text-ink/75">
+                        Кострома, посёлок Октябрьский, Кинешемское шоссе, 50А. Работаем ежедневно —
+                        приходите, когда удобно.
+                    </p>
+                </div>
+
+                <!-- кнопка открытия карты -->
+                <div class="mt-9 mx-auto max-w-2xl flex flex-col items-center gap-3 reveal">
+                    <a id="mapsLinkTop" target="_blank" rel="noopener" data-map-link
+                        href="https://yandex.ru/maps/-/CXerqNiG"
+                        class="btn-pop btn-terra text-lg">
+                        <i data-lucide="navigation" class="h-5 w-5"></i> Открыть карту
+                    </a>
+                    <p class="text-sm font-semibold text-ink/60 text-center">
+                        Нажмите — откроются Яндекс.Карты с нашим адресом и построением маршрута.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
+
+                    <!-- карта -->
+                    <div class="card-brut bg-cream p-3 reveal relative min-h-[420px]">
+                        <div class="absolute inset-3 rounded-[18px] overflow-hidden border-[3px] border-ink bg-sand">
+                            <iframe id="mapFrame" title="Мастерская Мердан на Яндекс.Картах"
+                                src="https://yandex.ru/map-widget/v1/?ll=41.001507%2C57.748723&z=17"
+                                width="100%" height="420" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 h-full w-full"></iframe>
+
+                            <!-- метка мастерской поверх карты (остриё булавки = точка на карте) -->
+                            <div class="pointer-events-none absolute inset-0">
+                                <div
+                                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
+                                    <span
+                                        class="sticker sticker-red text-[13px] whitespace-nowrap shadow-[3px_3px_0_#1E1E1E]">Мастерская
+                                        Мердан</span>
+                                    <svg viewBox="0 0 44 62" class="mt-1 w-9 h-[54px] drop-shadow-[2px_3px_0_rgba(30,30,30,.35)]"
+                                        role="img" aria-label="Мы здесь">
+                                        <path d="M22 2C10.4 2 2 11 2 22c0 15 20 38 20 38s20-23 20-38C42 11 33.6 2 22 2z"
+                                            fill="#E7582B" stroke="#1E1E1E" stroke-width="4" stroke-linejoin="round" />
+                                        <circle cx="22" cy="22" r="8" fill="#F6C844" stroke="#1E1E1E" stroke-width="4" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- инфо -->
+                    <div class="flex flex-col gap-6">
+                        <div class="card-brut bg-cream p-6 reveal">
+                            <h3 class="font-display text-2xl flex items-center gap-2">
+                                <i data-lucide="clock-3" class="h-6 w-6 text-terra"></i> График работы
+                            </h3>
+                            <ul class="mt-4 divide-y-[3px] divide-ink/10 font-semibold">
+                                <li class="flex items-center justify-between gap-4 py-3">
+                                    <span>Понедельник — пятница</span>
+                                    <span class="sticker sticker-sun text-sm px-3 py-1" style="--rot:0deg">8:00 — 18:00</span>
+                                </li>
+                                <li class="flex items-center justify-between gap-4 py-3">
+                                    <span>Суббота</span>
+                                    <span class="sticker sticker-terra text-sm px-3 py-1" style="--rot:0deg">8:00 — 17:00</span>
+                                </li>
+                                <li class="flex items-center justify-between gap-4 py-3">
+                                    <span>Воскресенье</span>
+                                    <span class="sticker sticker-teal text-sm px-3 py-1" style="--rot:0deg">8:00 — 14:00</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 rounded-2xl bg-sun/60 border-[3px] border-ink px-4 py-3 text-sm font-bold">
+                                <i data-lucide="info" class="inline h-4 w-4 -mt-0.5"></i>
+                                Работаем 7 дней в неделю — можно заехать и в воскресенье.
+                            </p>
+                        </div>
+
+                        <div class="card-brut bg-ink text-cream p-6 reveal">
+                            <h3 class="font-display text-2xl flex items-center gap-2 text-sun">
+                                <i data-lucide="map-pin" class="h-6 w-6"></i> Адрес и телефон
+                            </h3>
+                            <p class="mt-4 font-semibold text-cream/85 leading-relaxed">
+                                г. Кострома, пос. Октябрьский,<br>Кинешемское ш., 50А
+                            </p>
+                            <a href="tel:+79536642021" class="mt-4 block font-display text-3xl text-sun hover:text-white transition-colors">
+                                +7 953 664-20-21
+                            </a>
+                            <div class="mt-5 flex flex-wrap gap-2.5">
+                                <span class="sticker sticker-red text-sm">Опыт с 2008 года</span>
+                                <span class="sticker sticker-sun text-sm">15+ лет практики</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 7. FAQ ============ -->
+        <section id="faq" class="relative bg-cream py-16 sm:py-20">
+            <div class="mx-auto max-w-wrap px-4 sm:px-6">
+                <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+                    <div class="reveal">
+                        <span class="sticker sticker-sun" style="--rot:3deg">
+                            <i data-lucide="help-circle" class="h-4 w-4"></i> Вопросы и ответы
+                        </span>
+                        <h2 class="mt-5 font-display text-[10vw] sm:text-5xl lg:text-6xl leading-[.95]">
+                            Частые <span class="text-teal">вопросы</span>
+                        </h2>
+                        <p class="mt-5 font-semibold text-ink/75">
+                            Не нашли ответ? Позвоните — мастер подскажет по телефону и сразу скажет
+                            примерную стоимость.
+                        </p>
+                        <a href="tel:+79536642021" class="btn-pop btn-terra mt-7 text-lg">
+                            <i data-lucide="phone" class="h-5 w-5"></i> +7 953 664-20-21
+                        </a>
+                    </div>
+
+                    <div class="space-y-4 reveal">
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Сколько стоит дубликат ключа?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    Квартирные ключи — от 200 ₽, автомобильные с чипом — от 1 200 ₽.
+                                    Точную цену мастер называет на месте: она зависит от типа заготовки и
+                                    материала. Ремонт обуви — от 600 ₽, ремонт сумок — от 1 500 ₽.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Делаете ли вы ключи для автомобилей?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    Да: дубликаты транспондеров, корпуса и «ключи-пустышки», чипы BIL и HU100R,
+                                    привязка к автомобилю. Возьмите с собой оригинальный ключ — так быстрее.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Что с гарантией?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    На ключи и ремонт даётся гарантия. Если ключ не подошёл или ремонт
+                                    разошёлся — переделаем бесплатно. Гарантийные случаи обсуждаются по телефону.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Реально ли починить убитую обувь?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    В большинстве случаев — да: подошва, набойки, каблук, швы, замки,
+                                    фурнитура, цвет кожи. Мастер честно скажет, если восстановление нецелесообразно.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Как быстро можно забрать заказ?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    Квартирный ключ — 5 минут. Мелкий ремонт фурнитуры и молний — в день
+                                    обращения. Ремонт обуви и сумок обычно 1–3 дня, срок зависит от работы.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card-brut bg-white p-0 overflow-hidden">
+                            <button type="button"
+                                class="faq-toggle w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5">
+                                <span class="font-display text-lg sm:text-xl">Как вас найти в Октябрьском?</span>
+                                <i data-lucide="chevron-down" class="faq-chev h-6 w-6 shrink-0 text-terra"></i>
+                            </button>
+                            <div class="faq-body">
+                                <p class="px-5 sm:px-6 pb-5 font-semibold text-ink/75">
+                                    Адрес: Кострома, посёлок Октябрьский, Кинешемское ш., 50А. Постройте маршрут
+                                    в Яндекс.Картах — кнопка выше. Работаем без перерыва: Пн–Пт 8:00–18:00,
+                                    Сб 8:00–17:00, Вс 8:00–14:00.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <!-- ============ 8. FOOTER ============ -->
+    <footer class="relative bg-ink text-cream pt-16 pb-8 overflow-hidden">
+        <div class="absolute inset-0 stripes-ink pointer-events-none"></div>
+
+        <div class="relative mx-auto max-w-wrap px-4 sm:px-6">
+            <div class="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center reveal">
+
+                <!-- контакты -->
+                <div>
+                    <h2 class="font-display text-[11vw] sm:text-5xl uppercase leading-none">
+                        Контакты <span class="text-sun">мастерской</span>
+                    </h2>
+                    <ul class="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-5 font-semibold">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="mt-1 h-5 w-5 shrink-0 text-sun"></i>
+                            <a href="tel:+79536642021" class="text-xl hover:text-sun transition-colors">+7 953 664-20-21</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="mt-1 h-5 w-5 shrink-0 text-sun"></i>
+                            <a id="mapsLinkFooter" target="_blank" rel="noopener" data-map-link
+                                href="https://yandex.ru/maps/-/CXerqNiG"
+                                class="hover:text-sun transition-colors">
+                                г. Кострома, пос. Октябрьский,<br>Кинешемское ш., 50А
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="clock-3" class="mt-1 h-5 w-5 shrink-0 text-sun"></i>
+                            <span class="text-cream/85">
+                                Пн–Пт 8:00–18:00 · Сб 8:00–17:00 · Вс 8:00–14:00
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="award" class="mt-1 h-5 w-5 shrink-0 text-sun"></i>
+                            <span class="text-cream/85">Стаж и опыт мастера — с 2008 года</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- кнопки связи -->
+                <div class="flex flex-col gap-4">
+                    <a href="tel:+79536642021" class="btn-pop text-lg w-full sm:w-auto">
+                        <i data-lucide="phone" class="h-5 w-5"></i> Позвонить
+                    </a>
+                    <a href="https://t.me/ashanovm" target="_blank" rel="noopener" class="btn-pop btn-teal text-lg w-full sm:w-auto">
+                        <i data-lucide="send" class="h-5 w-5"></i> Telegram
+                    </a>
+                    <a href="https://max.ru/89536642021" target="_blank" rel="noopener" class="btn-pop btn-sun text-lg w-full sm:w-auto">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i> Max
+                    </a>
+                </div>
+            </div>
+            </div><!-- /max-w-wrap -->
+
+            <!-- бегущая строка во всю ширину экрана -->
+            <div class="relative mt-14 marquee border-y-[3px] border-cream/20 py-3">
+                <div class="marquee__track font-display text-3xl sm:text-4xl uppercase text-cream/25">
+                    <div class="ticker-item"><span>Работаем с 2008 г.</span><span class="text-terra">✱</span><span>Ключи</span><span class="text-terra">✱</span><span>Обувь</span><span class="text-terra">✱</span><span>Сумки</span><span class="text-terra">✱</span><span>Кострома</span><span class="text-terra">✱</span></div>
+                    <div class="ticker-item" aria-hidden="true"><span>Работаем с 2008 г.</span><span class="text-terra">✱</span><span>Ключи</span><span class="text-terra">✱</span><span>Обувь</span><span class="text-terra">✱</span><span>Сумки</span><span class="text-terra">✱</span><span>Кострома</span><span class="text-terra">✱</span></div>
+                </div>
+            </div>
+
+            <div class="relative mx-auto max-w-wrap px-4 sm:px-6">
+                <div class="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm font-semibold text-cream/55">
+                <p>© <span id="year">2026</span> Мастерская «Мердан» · дубликаты ключей, ремонт обуви и сумок ·
+                    Кострома, пос. Октябрьский. Стаж с 2008 года.</p>
+                <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Правовая информация">
+                    <a href="#" class="hover:text-sun transition-colors">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-sun transition-colors">Публичная оферта</a>
+                    <a href="#" class="hover:text-sun transition-colors">Карта сайта</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ MODAL: ЗАЯВКА ============ -->
+    <div id="orderModal" class="fixed inset-0 z-[60] grid place-items-center p-4" role="dialog" aria-modal="true"
+        aria-labelledby="orderTitle">
+        <div data-modal-backdrop class="absolute inset-0 bg-ink/70 backdrop-blur-sm"></div>
+
+        <div class="modal-card relative w-full max-w-lg rounded-[28px] border-[3px] border-ink bg-cream shadow-[10px_10px_0_#E7582B]">
+            <button type="button" data-modal-close aria-label="Закрыть"
+                class="absolute -top-4 -right-4 z-10 grid h-12 w-12 place-items-center rounded-2xl bg-sun border-[3px] border-ink shadow-[3px_3px_0_#1E1E1E] transition-transform duration-200 hover:rotate-90">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+
+            <div class="p-6 sm:p-8">
+                <span class="sticker sticker-terra" style="--rot:-3deg">Заявка мастерской</span>
+                <h3 id="orderTitle" class="mt-4 font-display text-3xl sm:text-4xl leading-tight">
+                    Заказать услугу
+                </h3>
+                <p class="mt-2 font-semibold text-ink/70 text-sm">
+                    Перезвоним в течение 10 минут в рабочее время и подтвердим стоимость.
+                </p>
+
+                <form id="orderForm" class="mt-6 space-y-4">
+                    <div>
+                        <label for="orderService" class="mb-1.5 block font-sticker text-lg uppercase">Услуга</label>
+                        <select id="orderService" class="field">
+                            <option>Квартирные ключи</option>
+                            <option>Ключи для автомобиля</option>
+                            <option>Ремонт обуви</option>
+                            <option>Ремонт сумок</option>
+                            <option>Молнии и фурнитура</option>
+                            <option>Другое — уточню по телефону</option>
+                        </select>
+                    </div>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div>
+                            <label for="orderName" class="mb-1.5 block font-sticker text-lg uppercase">Имя</label>
+                            <input id="orderName" type="text" required placeholder="Как к вам обращаться" class="field">
+                        </div>
+                        <div>
+                            <label for="orderPhone" class="mb-1.5 block font-sticker text-lg uppercase">Телефон</label>
+                            <input id="orderPhone" type="tel" required placeholder="+7 ___ ___-__-__" class="field">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="orderComment" class="mb-1.5 block font-sticker text-lg uppercase">Комментарий</label>
+                        <textarea id="orderComment" rows="3" placeholder="Например: нужен ключ от квартиры, английский замок"
+                            class="field resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-pop btn-terra w-full text-lg">
+                        <i data-lucide="send" class="h-5 w-5"></i> Отправить заявку
+                    </button>
+                    <p class="text-center text-xs font-semibold text-ink/55">
+                        Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.
+                    </p>
+                </form>
+
+                <div id="orderSuccess" class="hidden text-center py-6">
+                    <span class="mx-auto grid h-20 w-20 place-items-center rounded-full bg-teal text-white border-[3px] border-ink shadow-[4px_4px_0_#1E1E1E]">
+                        <i data-lucide="check" class="h-10 w-10"></i>
+                    </span>
+                    <h4 class="mt-5 font-display text-3xl">Заявка принята!</h4>
+                    <p class="mt-2 font-semibold text-ink/75">
+                        Спасибо! Мастер перезвонит в течение 10 минут. Если удобнее — позвоните сами:
+                        <a href="tel:+79536642021" class="underline decoration-terra decoration-4 font-extrabold">+7 953 664-20-21</a>
+                    </p>
+                    <button type="button" data-modal-close class="btn-pop btn-ink mt-6">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TOAST ============ -->
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 z-[70] flex items-center gap-3 rounded-2xl bg-ink text-cream border-[3px] border-cream px-5 py-3 shadow-[6px_6px_0_#E7582B] max-w-[92vw]">
+        <i data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sun"></i>
+        <span id="toastText" class="font-semibold text-sm">Добавлено в заявку</span>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var PHONE = '+7 953 664-20-21';
+            // координаты мастерской (из ссылки https://yandex.ru/maps/-/CXerqNiG)
+            var POI_LL = '41.001507,57.748723';
+            var POI_URL = 'https://yandex.ru/maps/-/CXerqNiG';
+
+            /* ---------- иконки Lucide ---------- */
+            function renderIcons() {
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', renderIcons);
+            } else {
+                renderIcons();
+            }
+            window.addEventListener('load', renderIcons);
+
+            /* ---------- год в копирайте ---------- */
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            /* ---------- мобильное меню ---------- */
+            var burger = document.getElementById('burger');
+            var burgerBar = document.getElementById('burgerBar');
+            var mobileNav = document.getElementById('mobileNav');
+
+            function closeMenu() {
+                if (!mobileNav || !burger) return;
+                mobileNav.classList.remove('is-open');
+                burgerBar.classList.remove('is-open');
+                burger.setAttribute('aria-expanded', 'false');
+            }
+
+            if (burger) {
+                burger.addEventListener('click', function () {
+                    var open = mobileNav.classList.toggle('is-open');
+                    burgerBar.classList.toggle('is-open', open);
+                    burger.setAttribute('aria-expanded', String(open));
+                });
+            }
+
+            Array.prototype.forEach.call(document.querySelectorAll('.mobile-link'), function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            /* ---------- тень шапки при скролле ---------- */
+            var header = document.getElementById('siteHeader');
+            function onScroll() {
+                if (!header) return;
+                header.classList.toggle('shadow-[0_6px_0_rgba(30,30,30,.12)]', window.scrollY > 12);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            /* ---------- появление блоков ---------- */
+            var revealItems = document.querySelectorAll('.reveal');
+
+            function revealVisible() {
+                var vh = window.innerHeight || document.documentElement.clientHeight;
+                Array.prototype.forEach.call(document.querySelectorAll('.reveal:not(.is-in)'), function (el) {
+                    var rect = el.getBoundingClientRect();
+                    if (rect.top < vh - 30 && rect.bottom > -30) el.classList.add('is-in');
+                });
+            }
+
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry, i) {
+                        if (entry.isIntersecting) {
+                            var el = entry.target;
+                            el.style.transitionDelay = Math.min(i * 60, 240) + 'ms';
+                            el.classList.add('is-in');
+                            io.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+                Array.prototype.forEach.call(revealItems, function (el) { io.observe(el); });
+            } else {
+                Array.prototype.forEach.call(revealItems, function (el) { el.classList.add('is-in'); });
+            }
+
+            /* страховка: показываем всё, что попало в экран, даже если наблюдатель не сработал */
+            var revealTick = false;
+            window.addEventListener('scroll', function () {
+                if (revealTick) return;
+                revealTick = true;
+                requestAnimationFrame(function () {
+                    revealVisible();
+                    revealTick = false;
+                });
+            }, { passive: true });
+            window.addEventListener('load', revealVisible);
+            revealVisible();
+            var revealGuard = setInterval(function () {
+                var hidden = document.querySelectorAll('.reveal:not(.is-in)');
+                if (!hidden.length) {
+                    clearInterval(revealGuard);
+                    return;
+                }
+                revealVisible();
+            }, 700);
+            setTimeout(function () { clearInterval(revealGuard); }, 15000);
+
+            /* ---------- FAQ аккордеон ---------- */
+            Array.prototype.forEach.call(document.querySelectorAll('.faq-item'), function (item) {
+                var btn = item.querySelector('.faq-toggle');
+                if (!btn) return;
+                btn.addEventListener('click', function () {
+                    var open = item.classList.contains('is-open');
+                    Array.prototype.forEach.call(document.querySelectorAll('.faq-item'), function (other) {
+                        other.classList.remove('is-open');
+                    });
+                    if (!open) item.classList.add('is-open');
+                });
+            });
+
+            /* ---------- toast ---------- */
+            var toast = document.getElementById('toast');
+            var toastText = document.getElementById('toastText');
+            var toastTimer = null;
+
+            function showToast(message) {
+                if (!toast || !toastText) return;
+                toastText.textContent = message;
+                toast.classList.add('is-show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(function () {
+                    toast.classList.remove('is-show');
+                }, 3200);
+            }
+
+            /* ---------- корзина заявок ---------- */
+            var cartCount = document.getElementById('cartCount');
+            var cart = [];
+
+            function updateCart() {
+                if (cartCount) {
+                    cartCount.textContent = String(cart.length);
+                    cartCount.classList.remove('count-bump');
+                    void cartCount.offsetWidth;
+                    if (cart.length) cartCount.classList.add('count-bump');
+                }
+            }
+
+            /* ---------- модалка заявки ---------- */
+            var modal = document.getElementById('orderModal');
+            var orderForm = document.getElementById('orderForm');
+            var orderSuccess = document.getElementById('orderSuccess');
+            var orderService = document.getElementById('orderService');
+
+            function openModal(service) {
+                if (!modal) return;
+                if (service && orderService) {
+                    var found = Array.prototype.some.call(orderService.options, function (opt) {
+                        return opt.value === service || opt.text === service;
+                    });
+                    if (found) orderService.value = service;
+                    var comment = document.getElementById('orderComment');
+                    if (comment && !found) comment.value = service;
+                }
+                if (orderForm) orderForm.classList.remove('hidden');
+                if (orderSuccess) orderSuccess.classList.add('hidden');
+                modal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                var nameInput = document.getElementById('orderName');
+                if (nameInput) setTimeout(function () { nameInput.focus(); }, 260);
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            Array.prototype.forEach.call(document.querySelectorAll('[data-open-order]'), function (btn) {
+                btn.addEventListener('click', function () {
+                    var service = btn.getAttribute('data-service') || '';
+                    if (service) {
+                        cart.push(service);
+                        updateCart();
+                        showToast('В заявке: ' + service + ' — ' + PHONE);
+                    } else {
+                        showToast('Опишите задачу — перезвоним за 10 минут');
+                    }
+                    openModal(service);
+                });
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('[data-modal-close]'), function (el) {
+                el.addEventListener('click', closeModal);
+            });
+
+            var backdrop = document.querySelector('[data-modal-backdrop]');
+            if (backdrop) backdrop.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    closeMenu();
+                }
+            });
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    orderForm.classList.add('hidden');
+                    if (orderSuccess) orderSuccess.classList.remove('hidden');
+                    showToast('Заявка отправлена. Перезвоним за 10 минут!');
+                    var phone = document.getElementById('orderPhone');
+                    if (phone) phone.value = '';
+                });
+            }
+
+            /* ---------- ссылки на карту ---------- */
+            var mapFrame = document.querySelector('#mapFrame');
+            if (mapFrame) {
+                // карта всегда показывает точку мастерской, а не геолокацию пользователя
+                mapFrame.setAttribute('src',
+                    'https://yandex.ru/map-widget/v1/?ll=' + encodeURIComponent(POI_LL) + '&z=17');
+            }
+            Array.prototype.forEach.call(
+                document.querySelectorAll('[data-map-link]'),
+                function (link) {
+                    link.setAttribute('href', POI_URL);
+                }
+            );
+
+            /* ---------- подсветка активного пункта меню ---------- */
+            var sections = ['services', 'about', 'where', 'faq'];
+            var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+            if ('IntersectionObserver' in window && navLinks.length) {
+                var navObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        navLinks.forEach(function (link) {
+                            link.classList.toggle('is-active',
+                                link.getAttribute('href') === '#' + entry.target.id);
+                        });
+                    });
+                }, { rootMargin: '-45% 0px -50% 0px' });
+                sections.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el) navObserver.observe(el);
+                });
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
